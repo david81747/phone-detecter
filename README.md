@@ -28,4 +28,20 @@
 環境準備好後，我們就可以喚醒 AI 監視器了！
 
 1. 在 Windows 系統中，打開開始選單，搜尋並開啟 **「Anaconda Prompt」**（請注意，不是一般的 cmd 終端機）。
-2. 依序複製並貼上
+2. 依序複製並貼上以下指令（每貼上一行請按 Enter 執行）：
+
+```bash
+# 1. 建立專屬的虛擬環境 (只需執行一次)
+conda create --name yolo-env1 python=3.12 -y
+
+# 2. 啟動虛擬環境
+conda activate yolo-env1
+
+# 3. 進入您存放檔案的資料夾 (請依您實際存放的路徑修改)
+cd C:\race\airace\yolo\vest3
+
+# 4. 安裝 YOLO 核心套件 (只需執行一次)
+pip install ultralytics
+
+# 5. 啟動 AI 檢測程式！
+python yolo_detect.py --model my_model.pt --source usb0 --resolution 1920x1080
